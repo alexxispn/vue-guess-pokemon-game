@@ -35,10 +35,11 @@ li {
   background-color: white;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   width: 15rem;
   padding: 0.5rem 0;
   font-weight: 600;
+  cursor: default;
+  font-size: 1.2rem;
 }
 
 .options-container {
@@ -48,9 +49,8 @@ li {
 
 @media screen and (min-width: 768px) {
   li {
-    width: 20rem;
-    font-size: 1.2rem;
-    font-weight: 600;
+    width: 22rem;
+    font-size: 1.6rem;
   }
   li:hover {
     background-color: #eeeaea;

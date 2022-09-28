@@ -7,7 +7,7 @@
     <template v-else>
       <h2 class="fade-in">{{ message }}</h2>
       <button @click="newGame">
-        Nuevo Juego
+        Volver a jugar
       </button>
     </template>
   </div>
@@ -64,11 +64,26 @@ h1 {
   font-family: 'Pokemon', sans-serif;
   -webkit-text-stroke: 2px #385AA7;
   letter-spacing: 0.2rem;
+  color: #FFCB05;
+  font-size: 2.2rem;
   margin: 0;
   padding-top: 2rem;
+}
+h2{
+  font-family: 'Pokemon', sans-serif;
+  -webkit-text-stroke: 2px #385AA7;
+  letter-spacing: 0.2rem;
   color: #FFCB05;
-  border: blue;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+}
+
+button{
+  width: 15rem;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
 }
 
 .body {
@@ -84,6 +99,16 @@ h1 {
   h1 {
     font-size: 3rem;
     padding-top: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  button {
+    width: 22rem;
+    font-size: 1.6rem;
+  }
+  button:hover {
+    background-color: #eeeaea;
   }
 }
 
