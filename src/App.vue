@@ -15,13 +15,19 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: "Pokemon";
+  src: local("Pokemon"),
+  url(./assets/fonts/Pokemon.ttf) format("truetype");
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-image: linear-gradient(to right top, #ff641a, #ff5d19, #ff5719, #ff4f1a, #ff471a, #ff4119, #ff3a17, #ff3216, #ff2b12, #ff230e, #ff180a, #ff0705);
+  background-image: linear-gradient(to right top, #ff641a, #ff441a, #d03816, #c22712, #b9210c, #af1b07, #a61103);
   height: 100vh;
 }
 

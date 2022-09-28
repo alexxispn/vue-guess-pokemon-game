@@ -25,6 +25,9 @@ export default {
 <style scoped>
 ul {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
   padding: 0;
 }
 
@@ -33,8 +36,9 @@ li {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  margin-bottom: 10px;
   width: 15rem;
+  padding: 0.5rem 0;
+  font-weight: 600;
 }
 
 .options-container {
@@ -43,6 +47,11 @@ li {
 }
 
 @media screen and (min-width: 768px) {
+  li {
+    width: 20rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
   li:hover {
     background-color: #eeeaea;
   }

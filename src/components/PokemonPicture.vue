@@ -50,7 +50,7 @@ export default {
   z-index: 2;
 }
 
-.blue{
+.blue {
   grid-area: picture;
   height: 22rem;
   filter: brightness(85%);
@@ -59,6 +59,21 @@ export default {
 .hidden-pokemon {
   filter: brightness(0);
   z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .pokemon-container {
+    height: 35rem;
+  }
+
+  .pokemon {
+    height: 15rem;
+  }
+
+  .blue {
+    height: 35rem;
+  }
+
 }
 
 </style>

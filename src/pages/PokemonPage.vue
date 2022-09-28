@@ -1,7 +1,7 @@
 <template>
   <h1 v-if="!pokemon">Espere por favor...</h1>
   <div v-else class="body">
-    <h1>¿Quién es este Pokémon?</h1>
+    <h1>¿Cuál es ese Pokémon?</h1>
     <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon"/>
     <PokemonOptions v-if="!showAnswer" :pokemons="pokemonArray" @selectedPokemon="checkAnswer"/>
     <template v-else>
@@ -61,17 +61,30 @@ export default {
 
 <style scoped>
 h1 {
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: 'Pokemon', sans-serif;
+  -webkit-text-stroke: 2px #385AA7;
+  letter-spacing: 0.2rem;
   margin: 0;
   padding-top: 2rem;
+  color: #FFCB05;
+  border: blue;
+  font-size: 2.2rem;
 }
 
 .body {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
+  height: 95vh;
   gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    padding-top: 3rem;
+  }
 }
 
 </style>
