@@ -24,4 +24,5 @@ export default {
   background-image: linear-gradient(to right top, #ff641a, #ff5d19, #ff5719, #ff4f1a, #ff471a, #ff4119, #ff3a17, #ff3216, #ff2b12, #ff230e, #ff180a, #ff0705);
   height: 100vh;
 }
+
 </style>

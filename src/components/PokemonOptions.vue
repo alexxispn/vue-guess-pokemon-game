@@ -1,10 +1,11 @@
 <template>
   <div class="options-container">
     <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
+      <li v-for="pokemon in pokemons"
+          :key="pokemon.id"
+          @click="$emit('selectedPokemon', pokemon.id)">
+          {{ pokemon.name }}
+      </li>
     </ul>
   </div>
 </template>
@@ -12,8 +13,11 @@
 <script>
 export default {
   name: "PokemonOptions",
-  computed: {
-
+  props: {
+    pokemons: {
+      type: Array,
+      required: true
+    }
   }
 }
 </script>
@@ -33,12 +37,14 @@ li {
   width: 15rem;
 }
 
-li:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
 .options-container {
   display: flex;
   justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  li:hover {
+    background-color: #eeeaea;
+  }
 }
 </style>

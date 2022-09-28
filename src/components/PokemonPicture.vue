@@ -1,6 +1,6 @@
 <template>
   <div class="pokemon-container">
-    <img src=".././assets/blue.svg" class="blue" alt="background blue">
+    <img src="../assets/img/blue.svg" class="blue" alt="background blue">
     <img :src="imageUrl" class="hidden-pokemon pokemon" alt="pokemon">
     <img v-if="showPokemon" :src="imageUrl" class="fade-in pokemon" alt="pokemon">
   </div>
@@ -41,7 +41,7 @@ export default {
 
 .pokemon {
   grid-area: picture;
-  height: 9rem;
+  height: 10rem;
   user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
