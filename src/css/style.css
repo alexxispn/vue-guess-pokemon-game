@@ -1,6 +1,57 @@
-html, body {
-    background-color: #f1f1f1;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #f1f1f1;
+}
+
+h1, h2 {
+    font-family: 'Pokemon', sans-serif;
+    -webkit-text-stroke: 2px #385AA7;
+    letter-spacing: 0.2rem;
+    color: #FFCB05;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+img {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+
+button, li {
+    background: white;
+    width: min(100%, 35rem);
+    padding: 0.5rem 0;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: default;
+}
+
+@media screen and (min-width: 1024px) {
+
+    button, li {
+        padding: 1.2rem 0;
+    }
+
+    button:hover, li:hover {
+        background-color: #eeeaea;
+    }
 }

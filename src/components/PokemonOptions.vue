@@ -1,13 +1,11 @@
 <template>
-  <div class="options-container">
-    <ul>
+    <ul class="options">
       <li v-for="pokemon in pokemons"
           :key="pokemon.id"
           @click="$emit('selectedPokemon', pokemon.id)">
         {{ pokemon.name }}
       </li>
     </ul>
-  </div>
 </template>
 
 <script>
@@ -23,52 +21,18 @@ export default {
 </script>
 
 <style scoped>
-ul {
-  list-style-type: none;
+.options {
   display: flex;
   flex-direction: column;
+  place-items: center;
+  list-style: none;
   gap: 0.8rem;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  width: 15rem;
-  padding: 0.5rem 0;
-  font-weight: 600;
-  cursor: default;
-  font-size: 1.2rem;
-}
-
-.options-container {
-  display: flex;
-  justify-content: center;
-}
-
-@media screen and (min-width: 768px) {
-  li {
-    width: 22rem;
-    font-size: 1.6rem;
-  }
-
-  li:hover {
-    background-color: #eeeaea;
-  }
+  width: 80%;
 }
 
 @media screen and (min-width: 1024px) {
-  .options-container {
-    display: flex;
-    justify-content: left;
-    width: 30rem;
-  }
-
-  ul {
+  .options {
     gap: 1.5rem;
   }
-
 }
 </style>

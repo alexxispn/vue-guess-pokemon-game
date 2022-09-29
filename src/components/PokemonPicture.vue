@@ -1,8 +1,8 @@
 <template>
-  <div class="pokemon-container">
-    <img src="../assets/img/blue.svg" class="blue" alt="background blue">
-    <img v-if="!showPokemon" :src="imageUrl" class="hidden-pokemon pokemon" alt="pokemon">
-    <img v-else :src="imageUrl" class="fade-in pokemon" alt="pokemon">
+  <div class="pokemon-img">
+    <img src="../assets/img/blue.svg" class="blue fade-in" alt="background blue" width="300"/>
+    <img v-if="!showPokemon" :src="imageUrl" class="pokemon hidden-pokemon" alt="pokemon">
+    <img v-else :src="imageUrl" class="pokemon fade-in" alt="pokemon">
   </div>
 </template>
 
@@ -30,45 +30,29 @@ export default {
 
 <style scoped>
 
-.pokemon-container {
-  height: 40vh;
+.pokemon-img{
   display: grid;
-  grid-auto-flow: column;
   grid-template-areas: "picture";
-  justify-content: center;
   place-items: center;
-}
-
-.pokemon {
-  grid-area: picture;
-  height: 20vh;
-  user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  z-index: 1;
+  width: clamp(80%, 100%, max(50vh, 50vw));
+  max-width: content-box;
 }
 
 .blue {
   grid-area: picture;
-  height: 40vh;
-  filter: brightness(85%);
+  filter: brightness(80%);
+  width: clamp(80%, 100%, max(45vh, 45rem));
+}
+
+.pokemon {
+  grid-area: picture;
+  width: 40%;
+  z-index: 1;
 }
 
 .hidden-pokemon {
   filter: brightness(0);
 }
 
-@media screen and (min-width: 1024px) {
-  .pokemon-container,
-  .blue {
-    height: 60vh;
-  }
-
-  .pokemon {
-    height: 30vh;
-  }
-}
 
 </style>

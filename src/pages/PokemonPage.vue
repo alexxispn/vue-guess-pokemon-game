@@ -1,17 +1,14 @@
 <template>
   <div class="container">
-    <h1 v-if="!pokemon">Espere por favor...</h1>
-    <template v-else>
-      <h1>¿Cuál es ese Pokémon?</h1>
-      <div class="body">
-        <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon"/>
-        <PokemonOptions v-if="!showAnswer" :pokemons="pokemonArray" @selectedPokemon="checkAnswer"/>
-        <div v-else class="pokemon-answer">
-          <h2 class="fade-in">{{ message }}</h2>
-          <button @click="newGame">
-            Volver a jugar
-          </button>
-        </div>
+    <h1 class="title">¿Cuál es ese Pokémon?</h1>
+    <template v-if="pokemon">
+      <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon"/>
+      <PokemonOptions v-if="!showAnswer" :pokemons="pokemonArray" @selectedPokemon="checkAnswer"/>
+      <div v-else class="message fade-in">
+        <h2 class="message__title">{{ message }}</h2>
+        <button @click="newGame">
+          Volver a jugar
+        </button>
       </div>
     </template>
   </div>
@@ -64,78 +61,56 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-family: 'Pokemon', sans-serif;
-  -webkit-text-stroke: 2px #385AA7;
-  letter-spacing: 0.2rem;
-  color: #FFCB05;
-  font-size: 2rem;
-  margin: 0;
-  text-align: center;
-}
 
-h2 {
-  font-family: 'Pokemon', sans-serif;
-  -webkit-text-stroke: 2px #385AA7;
-  letter-spacing: 0.2rem;
-  color: #FFCB05;
-  font-size: 1.5rem;
+.title {
+  width: 90%;
+  align-self: end;
 }
 
 .container {
-  height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: clamp(9rem, 10%, 14rem) 1fr 16rem;
   place-items: center;
+  gap: 0.5rem;
+  min-height: 100vh;
 }
 
-.body {
-  display: grid;
-  height: 100%;
+.message {
+  width:80%;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 1rem;
 }
 
-button {
-  width: 15rem;
-  padding: 0.5rem 0;
-  font-weight: 600;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  font-size: 1.2rem;
+.message__title {
+  width: 100%;
 }
 
-@media screen and (min-width: 768px) {
-  h1 {
-    font-size: 3rem;
-    padding-top: 3rem;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  button {
-    width: 22rem;
-    font-size: 1.6rem;
-  }
-
-  button:hover {
-    background-color: #eeeaea;
-  }
+pokemon-picture{
+  width: fit-content;
 }
 
 @media screen and (min-width: 1024px) {
-  .body {
-    grid-auto-flow: column;
-    grid-template-columns: 1.5fr 1fr;
-    width: 100%;
-    align-items: center;
+  .container {
+    grid-template-rows: 1fr 7fr;
+    grid-template-columns: 1.7fr 1fr;
+    grid-template-areas:
+      "title title"
+      "picture options";
   }
-  .pokemon-answer{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    width: 30rem;
-    text-align: left;
+  .title {
+    grid-area: title;
+    width: 100%;
+  }
+  pokemon-picture {
+    grid-area: picture;
+  }
+  pokemon-options {
+    grid-area: options;
+  }
+  .message {
+    grid-area: options;
   }
 }
 

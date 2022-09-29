@@ -27,8 +27,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-image: linear-gradient(to right top, #ff641a, #ff441a, #d03816, #c22712, #b9210c, #af1b07, #a61103);
-  height: 100vh;
+  background: linear-gradient(to right top, #ff641a, #ff441a, #d03816, #c22712, #b9210c, #af1b07, #a61103);
+  min-height: 100vh;
 }
 
 </style>
