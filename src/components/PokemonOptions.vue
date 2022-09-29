@@ -4,7 +4,7 @@
       <li v-for="pokemon in pokemons"
           :key="pokemon.id"
           @click="$emit('selectedPokemon', pokemon.id)">
-          {{ pokemon.name }}
+        {{ pokemon.name }}
       </li>
     </ul>
   </div>
@@ -29,6 +29,7 @@ ul {
   flex-direction: column;
   gap: 0.8rem;
   padding: 0;
+  margin: 0;
 }
 
 li {
@@ -52,8 +53,22 @@ li {
     width: 22rem;
     font-size: 1.6rem;
   }
+
   li:hover {
     background-color: #eeeaea;
   }
+}
+
+@media screen and (min-width: 1024px) {
+  .options-container {
+    display: flex;
+    justify-content: left;
+    width: 30rem;
+  }
+
+  ul {
+    gap: 1.5rem;
+  }
+
 }
 </style>

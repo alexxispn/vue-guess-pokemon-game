@@ -1,14 +1,18 @@
 <template>
-  <h1 v-if="!pokemon">Espere por favor...</h1>
-  <div v-else class="body">
-    <h1>¿Cuál es ese Pokémon?</h1>
-    <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon"/>
-    <PokemonOptions v-if="!showAnswer" :pokemons="pokemonArray" @selectedPokemon="checkAnswer"/>
+  <div class="container">
+    <h1 v-if="!pokemon">Espere por favor...</h1>
     <template v-else>
-      <h2 class="fade-in">{{ message }}</h2>
-      <button @click="newGame">
-        Volver a jugar
-      </button>
+      <h1>¿Cuál es ese Pokémon?</h1>
+      <div class="body">
+        <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon"/>
+        <PokemonOptions v-if="!showAnswer" :pokemons="pokemonArray" @selectedPokemon="checkAnswer"/>
+        <div v-else class="pokemon-answer">
+          <h2 class="fade-in">{{ message }}</h2>
+          <button @click="newGame">
+            Volver a jugar
+          </button>
+        </div>
+      </div>
     </template>
   </div>
 </template>
@@ -65,19 +69,32 @@ h1 {
   -webkit-text-stroke: 2px #385AA7;
   letter-spacing: 0.2rem;
   color: #FFCB05;
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin: 0;
-  padding-top: 2rem;
+  text-align: center;
 }
-h2{
+
+h2 {
   font-family: 'Pokemon', sans-serif;
   -webkit-text-stroke: 2px #385AA7;
   letter-spacing: 0.2rem;
   color: #FFCB05;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
-button{
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  place-items: center;
+}
+
+.body {
+  display: grid;
+  height: 100%;
+}
+
+button {
   width: 15rem;
   padding: 0.5rem 0;
   font-weight: 600;
@@ -86,29 +103,39 @@ button{
   font-size: 1.2rem;
 }
 
-.body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 95vh;
-  gap: 2rem;
-}
-
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 3rem;
     padding-top: 3rem;
   }
+
   h2 {
     font-size: 2.5rem;
   }
+
   button {
     width: 22rem;
     font-size: 1.6rem;
   }
+
   button:hover {
     background-color: #eeeaea;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .body {
+    grid-auto-flow: column;
+    grid-template-columns: 1.5fr 1fr;
+    width: 100%;
+    align-items: center;
+  }
+  .pokemon-answer{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 30rem;
+    text-align: left;
   }
 }
 

@@ -31,7 +31,7 @@ export default {
 <style scoped>
 
 .pokemon-container {
-  height: 22rem;
+  height: 40vh;
   display: grid;
   grid-auto-flow: column;
   grid-template-areas: "picture";
@@ -41,7 +41,7 @@ export default {
 
 .pokemon {
   grid-area: picture;
-  height: 10rem;
+  height: 20vh;
   user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -52,7 +52,7 @@ export default {
 
 .blue {
   grid-area: picture;
-  height: 22rem;
+  height: 40vh;
   filter: brightness(85%);
 }
 
@@ -61,19 +61,15 @@ export default {
   z-index: 1;
 }
 
-@media screen and (min-width: 768px) {
-  .pokemon-container {
-    height: 35rem;
+@media screen and (min-width: 1024px) {
+  .pokemon-container,
+  .blue {
+    height: 60vh;
   }
 
   .pokemon {
-    height: 15rem;
+    height: 30vh;
   }
-
-  .blue {
-    height: 35rem;
-  }
-
 }
 
 </style>
