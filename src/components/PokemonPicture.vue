@@ -34,19 +34,17 @@ export default {
   display: grid;
   grid-template-areas: "picture";
   place-items: center;
-  width: clamp(80%, 100%, max(50vh, 50vw));
-  max-width: content-box;
 }
 
 .blue {
   grid-area: picture;
+  width: clamp(min(30vh, 30vw), 90%, max(50vh, 40vw));
   filter: brightness(80%);
-  width: clamp(80%, 100%, max(45vh, 45rem));
 }
 
 .pokemon {
   grid-area: picture;
-  width: 40%;
+  width: clamp(min(20vh, 20vw), 50%, max(30vh, 25vw));
   z-index: 1;
 }
 

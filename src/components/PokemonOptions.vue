@@ -26,13 +26,7 @@ export default {
   flex-direction: column;
   place-items: center;
   list-style: none;
-  gap: 0.8rem;
+  gap: clamp(0.8rem, 2vw, 1.6rem);
   width: 80%;
-}
-
-@media screen and (min-width: 1024px) {
-  .options {
-    gap: 1.5rem;
-  }
 }
 </style>

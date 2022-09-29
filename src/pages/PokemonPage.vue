@@ -61,55 +61,44 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  display: grid;
+  grid-template-rows: clamp(9rem, 10%, 14rem) 1fr min(0.8fr, 16rem);
+  place-items: center;
+  min-height: 100vh;
+}
 
 .title {
   width: 90%;
   align-self: end;
 }
 
-.container {
-  display: grid;
-  grid-template-rows: clamp(9rem, 10%, 14rem) 1fr 16rem;
-  place-items: center;
-  gap: 0.5rem;
-  min-height: 100vh;
-}
-
 .message {
-  width:80%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   place-items: center;
   gap: 1rem;
 }
 
-.message__title {
-  width: 100%;
-}
-
-pokemon-picture{
-  width: fit-content;
-}
-
 @media screen and (min-width: 1024px) {
   .container {
-    grid-template-rows: 1fr 7fr;
-    grid-template-columns: 1.7fr 1fr;
+    grid-template-rows: clamp(9rem, 10%, 14rem) 1fr;
+    grid-template-columns: 1.2fr 1fr;
     grid-template-areas:
       "title title"
       "picture options";
   }
+
   .title {
     grid-area: title;
-    width: 100%;
   }
+
   pokemon-picture {
     grid-area: picture;
   }
+
   pokemon-options {
-    grid-area: options;
-  }
-  .message {
     grid-area: options;
   }
 }
