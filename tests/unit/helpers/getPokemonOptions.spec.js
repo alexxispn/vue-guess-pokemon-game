@@ -1,4 +1,5 @@
 import getPokemonsOptions, {getPokemons, getPokemonsNames} from "@/helpers/getPokemonOptions";
+import {PokemonsMock} from "../mocks/pokemons.mock";
 
 describe(getPokemonsOptions, () => {
     describe('getPokemons', () => {
@@ -20,12 +21,7 @@ describe(getPokemonsOptions, () => {
         })
         it(' should return 4 elements with name and id', async () => {
             const pokemons = await getPokemonsNames([1, 2, 3, 4])
-            expect(pokemons).toStrictEqual([
-                {name: 'Bulbasaur', id: 1},
-                {name: 'Ivysaur', id: 2},
-                {name: 'Venusaur', id: 3},
-                {name: 'Charmander', id: 4}
-            ])
+            expect(pokemons).toStrictEqual(PokemonsMock)
         })
     })
     describe('getPokemonsOptions', () => {
