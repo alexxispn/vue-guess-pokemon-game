@@ -1,8 +1,8 @@
 <template>
   <div class="pokemon-container">
     <img src="../assets/img/blue.svg" class="blue" alt="background blue">
-    <img :src="imageUrl" class="hidden-pokemon pokemon" alt="pokemon">
-    <img v-if="showPokemon" :src="imageUrl" class="fade-in pokemon" alt="pokemon">
+    <img v-if="!showPokemon" :src="imageUrl" class="hidden-pokemon pokemon" alt="pokemon">
+    <img v-else :src="imageUrl" class="fade-in pokemon" alt="pokemon">
   </div>
 </template>
 
@@ -47,7 +47,7 @@ export default {
   -ms-user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
-  z-index: 2;
+  z-index: 1;
 }
 
 .blue {
@@ -58,7 +58,6 @@ export default {
 
 .hidden-pokemon {
   filter: brightness(0);
-  z-index: 1;
 }
 
 @media screen and (min-width: 1024px) {
